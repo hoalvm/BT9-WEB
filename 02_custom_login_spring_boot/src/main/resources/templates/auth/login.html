@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layouts/layout :: head('Đăng nhập')}"></head>
+
+<body class="auth-body">
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Brand Header -->
+            <div class="auth-header">
+                <h1 class="auth-title">Đăng nhập</h1>
+                <p class="auth-subtitle">Nhập thông tin xác thực để truy cập hệ thống</p>
+            </div>
+
+            <!-- Alert Error Message -->
+            <div class="alert-box alert-error" th:if="${param.error}">
+                Tài khoản hoặc mật khẩu không chính xác. Vui lòng thử lại.
+            </div>
+
+            <!-- Alert Logout Success Message -->
+            <div class="alert-box alert-success" th:if="${param.logout}">
+                Bạn đã đăng xuất thành công khỏi hệ thống.
+            </div>
+
+            <!-- Login Form: supports username or email -->
+            <form th:action="@{/login}" method="post" id="login-form" class="auth-form">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+                <div class="form-group">
+                    <label for="username" class="form-label">Tài khoản</label>
+                    <input type="text" id="username" name="username" class="form-control" required autofocus
+                        placeholder="Username hoặc email" autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input type="password" id="password" name="password" class="form-control" required
+                        placeholder="••••••••" autocomplete="current-password">
+                </div>
+
+                <button type="submit" id="login-btn" class="btn-submit">Đăng nhập</button>
+            </form>
+
+            <!-- Footer -->
+            <div class="auth-footer">
+                <span>&copy; 2026 <strong>Lý Võ Mỹ Hoa</strong>. All rights reserved.</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="~{layouts/layout :: head('Tổng quan tài khoản')}"></head>
+
+<body class="site-body">
+
+    <!-- Header Navigation -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Main Container -->
+    <main class="main-content">
+        <div class="page-container">
+
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1 class="page-title">Tổng quan tài khoản</h1>
+            </section>
+
+            <!-- Account Overview Panel -->
+            <div class="panel-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Thông tin người dùng</h2>
+                        <p class="panel-desc">Tài khoản có quyền truy cập hệ thống.</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="data-row">
+                            <span class="data-label">Họ và tên</span>
+                            <span class="data-value" th:text="${#authentication.principal.fullName}">Tên người
+                                dùng</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Email</span>
+                            <span class="data-value" sec:authentication="name">email@example.com</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Vai trò</span>
+                            <span class="data-value">
+                                <span class="role-tag" th:text="${#authentication.principal.roleName}">USER</span>
+                            </span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Trạng thái</span>
+                            <span class="data-value status-active">Đang hoạt động</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</body>
+
+</html>
