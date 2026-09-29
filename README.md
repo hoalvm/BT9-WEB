@@ -4,15 +4,15 @@
 
 ## Overview
 
-- **Bài 1**: Xác thực phiên với Spring Security 7, cấu trúc thực thể User - Role, chuyển đổi các DTO linh hoạt thông qua MapStruct, mã hóa mật khẩu an toàn với BCrypt và hiển thị phiên đăng nhập người dùng trên giao diện Thymeleaf.
+- **Bài 1**: Xác thực phiên với Spring Security 7, cấu trúc thực thể User - Role, chuyển đổi DTO linh hoạt thông qua MapStruct, mã hóa mật khẩu an toàn với BCrypt và hiển thị phiên đăng nhập người dùng trên giao diện Thymeleaf.
 - **Bài 2**: Cơ chế đăng nhập hỗ trợ đăng nhập linh hoạt bằng cả Username và Email, hiển thị thông tin hồ sơ kèm ảnh đại diện của người dùng trên thanh điều hướng.
 - **Bài 3**: Cổng thông tin quản trị hoàn chỉnh:
   - Khôi phục và đặt lại mật khẩu với xác thực Email OTP.
   - Phân quyền truy cập dựa trên vai trò (`ROLE_ADMIN`, `ROLE_USER`).
-  - Đăng ký tài khoản và xác thực kích hoạt an toàn thông qua mã xác nhận Email OTP.
-  - Tải lên và quản lý hình ảnh sản phẩm/người dùng qua dịch vụ đám mây Cloudinary.
   - Quản lý người dùng (`Users Management`) dành riêng cho Quản trị viên.
   - Quản lý sản phẩm (`Products Management`) dành cho người dùng đã đăng nhập.
+  - Đăng ký tài khoản và xác thực kích hoạt an toàn thông qua mã xác nhận Email OTP.
+  - Tải lên và quản lý hình ảnh sản phẩm/người dùng qua dịch vụ đám mây Cloudinary.
 
 ## URLs
 
